@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title>amis-index-ps</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="stylesheet" href="sdk.css" />
+    <link rel="stylesheet" href="helper.css" />
+    <link rel="stylesheet" href="iconfont.css" />
+    <!-- 这是默认主题所需的，如果是其他主题则不需要 -->
+    <!-- 从 1.1.0 开始 sdk.css 将不支持 IE 11，如果要支持 IE11 请引用这个 css，并把前面那个删了 -->
+    <!-- <link rel="stylesheet" href="sdk-ie11.css" /> -->
+    <!-- 不过 amis 开发团队几乎没测试过 IE 11 下的效果，所以可能有细节功能用不了，如果发现请报 issue -->
+    <style>
+      html,
+      body,
+      .app-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="app-wrapper"></div>
+    <script src="sdk.js"></script>
+    <script type="text/javascript">
+      (function () {
+        let amis = amisRequire('amis/embed');
+        // 通过替换下面这个配置来生成不同页面
+        let amisJSON = {
+  "type": "page",
+  "title": "主页-由良心百度提供的amis制作",
+  "body": [
+    {
+      "type": "link",
+      "value": "http://www.baidu.com/",
+      "id": "u:c2eeb4e2ae04",
+      "href": "https://fshd-studio.github.io/",
+      "body": "前往主页（或扫描二维码）",
+      "blank": true,
+      "className": "r-3x font-bold text-info"
+    },
+    {
+      "type": "qrcode",
+      "value": "https://fshd-studio.github.io/",
+      "id": "u:0b60eaf2d08f",
+      "codeSize": 128,
+      "foregroundColor": "#4a90e2",
+      "className": "",
+      "level": "M",
+      "visible": true
+    },
+    {
+      "type": "button-toolbar",
+      "label": "前往页面",
+      "buttons": [
+        {
+          "type": "button",
+          "label": "前往amis主页",
+          "onEvent": {
+            "click": {
+              "actions": [
+                {
+                  "args": {
+                    "url": "https://aisuda.bce.baidu.com/amis/"
+                  },
+                  "actionType": "url"
+                }
+              ]
+            }
+          },
+          "id": "u:3cd1bc212819",
+          "badge": {
+            "mode": "dot",
+            "offset": [
+              0,
+              0
+            ],
+            "animation": true
+          }
+        },
+        {
+          "type": "button",
+          "label": "前往demo页面",
+          "onEvent": {
+            "click": {
+              "actions": [
+                {
+                  "args": {
+                    "url": "demo.html"
+                  },
+                  "actionType": "url"
+                }
+              ]
+            }
+          },
+          "id": "u:fb9a3c670278",
+          "badge": {
+            "mode": "dot",
+            "offset": [
+              0,
+              0
+            ],
+            "level": "success",
+            "animation": true
+          }
+        },
+        {
+          "type": "button",
+          "label": "前往主页",
+          "id": "u:cba4472ad870",
+          "badge": {
+            "mode": "dot",
+            "offset": [
+              0,
+              0
+            ],
+            "level": "info"
+          },
+          "onEvent": {
+            "click": {
+              "weight": 0,
+              "actions": [
+                {
+                  "args": {
+                    "url": "https://fshd-studio.github.io/"
+                  },
+                  "actionType": "url"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "button",
+          "label": "了解我们",
+          "id": "u:7ac5e8adb482",
+          "badge": {
+            "mode": "dot",
+            "offset": [
+              0,
+              0
+            ],
+            "level": "warning"
+          },
+          "onEvent": {
+            "click": {
+              "weight": 0,
+              "actions": [
+                {
+                  "args": {
+                    "url": "https://fast-waller.github.io/other/contact/"
+                  },
+                  "actionType": "url"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "button",
+          "label": "听点音乐？",
+          "id": "u:93b1f461b9d1",
+          "badge": {
+            "mode": "ribbon",
+            "offset": [
+              0,
+              0
+            ],
+            "level": "success",
+            "animation": true
+          },
+          "onEvent": {
+            "click": {
+              "weight": 0,
+              "actions": [
+                {
+                  "args": {
+                    "url": "https://fast-waller.github.io/other/audio/music.html"
+                  },
+                  "actionType": "url"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "id": "u:87fa416cd51f",
+      "labelRemark": {
+        "icon": "fa fa-question-circle",
+        "trigger": [
+          "hover"
+        ],
+        "className": "Remark--warning",
+        "placement": "right",
+        "title": "什么叫前往页面？",
+        "content": "点击下列按钮前往相应的页面，保证不会前往什么奇奇怪怪的页面！除非域名被某个奇奇怪怪的网站买去了"
+      },
+      "className": "text-base b-dark r-3x"
+    },
+    {
+      "type": "input-color",
+      "label": "查看颜色代码",
+      "name": "color",
+      "id": "u:51317c334f4b",
+      "format": "rgb",
+      "value": "rgb(17, 67, 233)",
+      "presetColors": [
+        "rgb(255, 255, 255)",
+        "rgb(0, 0, 0)",
+        "rgb(208, 2, 27)",
+        "rgb(245, 166, 35)",
+        "rgb(248, 231, 28)",
+        "rgb(126, 211, 33)",
+        "rgb(74, 144, 226)",
+        "rgb(144, 19, 254)"
+      ]
+    }
+  ],
+  "id": "u:6c1d24f32426"
+}
+
+        let amisScoped = amis.embed('#root', amisJSON);
+      })();
+    </script>
+  </body>
+</html>
